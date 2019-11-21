@@ -8,11 +8,10 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint",
-    "server": "nodemon server.js",
-    "client": "cd server && npm server"
+    "server": "cd server && nodemon server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "dependencies": {
-    "concurrently": "^5.0.0",
     "express": "^4.17.1",
     "react": "16.9.0",
     "react-native": "0.61.4"
