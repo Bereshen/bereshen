@@ -1,8 +1,8 @@
 import { applyMiddleWare, createStore } from 'redux';
 import { composeWithDevTools } from 'remote-redux-devtools';
 import { createSagaMiddleware } from 'redux-saga';
-// import Async 
-// import rootReducer
+import Async from '../Middlewares/Async';
+import rootReducer from '../Reducers/index';
 // import rootSaga
 
 
@@ -15,13 +15,13 @@ const sagaMiddleware = createSagaMiddleware();
 middleware.push(sagaMiddleware);
 
 /*  -------------- Create Async Middleware ----------------*/
-// middleware.push(Async)
+middleware.push(Async);
 
 /*  --------------- Assemble Middleware ------------------*/
 enhancers.push(applyMiddleWare(...middleware));
 
 /*  -------------- Create Store Dev ----------------------*/
-const store = createStore('RootReducer', composeWithDevTools(applyMiddleWare(...middleware)));
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleWare(...middleware)));
 
 /*  -------------- Kick Off Root Saga --------------------*/
 sagaMiddleware.run('rootsaga');
