@@ -9,7 +9,7 @@
     "test": "jest",
     "lint": "eslint",
     "server": "cd server && nodemon server.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run ios\""
   },
   "dependencies": {
     "express": "^4.17.1",
@@ -38,5 +38,5 @@
   "jest": {
     "preset": "react-native"
   },
-  "proxy": "localhost:5000"
+  "proxy": "http://localhost:5000"
 }
