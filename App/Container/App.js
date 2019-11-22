@@ -3,7 +3,13 @@ import { View, Text } from 'react-native';
 
 
 const App = () => (
-  <View style={{ display: 'flex', flex: 1, alignSelf: 'center', justifyContent: 'center' }}>
+  <View style={{
+    display: 'flex',
+    flex: 1,
+    alignSelf: 'center',
+    justifyContent: 'center',
+  }}
+  >
     <Text>This is a landing page</Text>
   </View>
 );
